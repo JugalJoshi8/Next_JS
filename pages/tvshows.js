@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
+import withLayout from '../components/hoc/withLayout';
+
 
 const Index = props => (
   <>
     <h1>Batman TV Shows</h1>
     <ul>
-      {props.shows.map(show => (
+      {props.shows && props.shows.map(show => (
         <li key={show.id}>
           <Link href="/tvshow/[id]" as={`/tvshow/${show.id}`}>
             <a>{show.name}</a>
@@ -27,4 +29,4 @@ Index.getInitialProps = async function() {
   };
 };
 
-export default Index;
+export default withLayout(Index);

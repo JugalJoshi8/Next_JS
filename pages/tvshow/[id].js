@@ -1,12 +1,15 @@
-import fetch from 'isomorphic-unfetch';
+import fetch from "isomorphic-unfetch";
+import withLayout from "../../components/hoc/withLayout";
 
-const Post = props => (
-  <>
-    <h1>{props.show.name}</h1>
-    <p>{props.show.summary.replace(/<[/]?p>/g, '')}</p>
-    <img src={props.show.image.medium} />
-  </>
-);
+const Post = ({ show }) => {
+  return show ? (
+    <>
+      <h1>{show.name}</h1>
+      <p>{show.summary.replace(/<[/]?p>/g, "")}</p>
+      <img src={show.image.medium} />
+    </>
+  ) : null;
+};
 
 Post.getInitialProps = async function(context) {
   const { id } = context.query;
@@ -18,4 +21,4 @@ Post.getInitialProps = async function(context) {
   return { show };
 };
 
-export default Post;
+export default withLayout(Post);

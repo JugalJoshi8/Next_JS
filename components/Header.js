@@ -1,25 +1,34 @@
 import Link from 'next/link';
+import styled from 'styled-components';
+//import styled
+const StyledAnchor = styled.a`
+  margin-right: 15px;
+  cursor: pointer;
+`;
 
-const linkStyle = {
-  marginRight: 15
-};
+const Wrapper = styled.header`
+  background-color: ${props => props.theme.background};
+  color: ${props => props.theme.color};
+  padding: 15px;
+`;
 
-function Header() {
+function Header(props) {
+  console.log(props);
   return (
-    <>
+    <Wrapper>
       <Link href="/">
-        <a style = {linkStyle} title="home">Home Page</a>
+        <StyledAnchor title="home">Home Page</StyledAnchor>
       </Link>
       <Link href="/about">
-        <a style = {linkStyle} title="About">About Page</a>
+        <StyledAnchor title="About">About Page</StyledAnchor>
       </Link>
       <Link href="/blog">
-        <a style = {linkStyle} title="Blog">Blog Page</a>
+        <StyledAnchor title="Blog">Blog Page</StyledAnchor>
       </Link>
       <Link href="/tvshows">
-        <a style = {linkStyle} title="TV shows">TV shows Page</a>
+        <StyledAnchor title="TV shows">TV Shows</StyledAnchor>
       </Link>
-    </>
+    </Wrapper>
   );
 }
 
