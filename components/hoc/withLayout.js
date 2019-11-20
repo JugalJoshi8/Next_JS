@@ -7,9 +7,6 @@ const layoutStyle = {
 };
 const withLayout = Page => {
   const Component = props => {
-    if (Page.getInitialProps) {
-      Component.getInitialProps = Page.getInitialProps;
-    }
     return (
       <div style={layoutStyle}>
         <Head>
@@ -25,6 +22,9 @@ const withLayout = Page => {
       </div>
     );
   };
+  if (Page.getInitialProps) {
+    Component.getInitialProps = Page.getInitialProps;
+  }
   return Component;
 };
 
