@@ -1,6 +1,7 @@
 import withLayout from '../components/hoc/withLayout';
 
-function About() {
+function About(props) {
+  console.log(props);
   return (
     <p>This is the about page</p>
   );

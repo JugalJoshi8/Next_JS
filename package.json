@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "flow-typed": "flow-typed install",
+    "flow": "flow"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,8 @@
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.6"
+    "babel-plugin-styled-components": "^1.10.6",
+    "flow-bin": "^0.112.0",
+    "flow-typed": "^2.6.2"
   }
 }
